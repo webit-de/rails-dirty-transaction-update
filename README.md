@@ -1,24 +1,10 @@
-# README
+# Dirty Transaction Update
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This little app should demonstrate a possible bug in rails.
 
-Things you may want to cover:
+To run this bundle, edit config/database.yml, create db,  migrate and run the following commands:
 
-* Ruby version
+* `rails runner test_transactions.rb` - This shows the test case for a "production"-like environment
+* `rails test test/models/test_object_test.rb` - This runs similar code inside a transactional test
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You will see that the output of the saved field differs between these two variants.
